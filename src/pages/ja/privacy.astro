@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Content from '../../components/PrivacyContent.astro';
+import { BRAND } from '../../data/site';
+---
+<BaseLayout lang="ja" pagePath="/privacy" title={`プライバシー・サイト情報 | ${BRAND}`} description="サイトとお問い合わせについてのご案内。" mobile={false} noindex={false}><Content lang="ja" /></BaseLayout>

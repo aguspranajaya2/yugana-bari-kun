@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import HomeContent from '../../components/HomeContent.astro';
+import { BRAND } from '../../data/site';
+const lang = 'ja';
+---
+<BaseLayout lang={lang} pagePath="/" title={`${BRAND} | あなたらしいバリ島の旅`} description="ウブド・ウルワツ・ヌサペニダの旅をご紹介。行程や料金をWhatsAppでご相談いただけます。"><HomeContent lang={lang} /></BaseLayout>

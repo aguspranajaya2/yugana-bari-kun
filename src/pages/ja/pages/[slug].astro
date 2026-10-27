@@ -1,0 +1,9 @@
+---
+import { getCollection } from 'astro:content';
+import TourPage from '../../../components/TourPage.astro';
+export async function getStaticPaths() {
+  return (await getCollection('tours')).map(tour => ({ params:{slug:tour.data.slug}, props:{tour} }));
+}
+const { tour } = Astro.props;
+---
+<TourPage lang="ja" tour={tour} />

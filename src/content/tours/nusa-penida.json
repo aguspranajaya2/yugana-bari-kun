@@ -1,0 +1,44 @@
+{
+  "slug": "nusa-penida",
+  "name": "Nusa Penida",
+  "name_ja": "ヌサペニダ",
+  "category": "ISLAND & OCEAN",
+  "category_ja": "島と青い海",
+  "intro": "Dramatic viewpoints and a different rhythm across the water.",
+  "intro_ja": "海の向こうへ。ダイナミックな景色と島の時間を楽しむ旅。",
+  "heading": "An island escape, beyond the familiar.",
+  "heading_ja": "海を渡って、島の絶景へ。",
+  "description": "Discuss a Nusa Penida route focused on island viewpoints. Boat arrangements, island transport, the stops you visit, and the overall schedule need to be agreed before booking.",
+  "description_ja": "ヌサペニダ島の展望スポットを中心にしたルートをご相談ください。ボート、島内移動、訪問先、当日のスケジュールは、ご予約前に確認が必要です。",
+  "steps": [
+    [
+      "An agreed meeting point and transfer to the harbour",
+      "事前に決めた集合場所から港へ"
+    ],
+    [
+      "Boat crossing to Nusa Penida, subject to sea conditions",
+      "海況に応じてボートでヌサペニダ島へ"
+    ],
+    [
+      "Kelingking viewpoint as a possible stop",
+      "クリンキンの展望スポットなどを訪問"
+    ],
+    [
+      "Discuss Broken Beach or another island viewpoint",
+      "ブロークンビーチなど、ご希望の展望スポットをご相談"
+    ],
+    [
+      "A lunch break and return boat crossing",
+      "ランチ休憩と帰りのボート"
+    ],
+    [
+      "Return to the agreed drop-off point",
+      "事前に決めた場所へお送り"
+    ]
+  ],
+  "note": "This route includes sea travel and uneven island roads. Ask about suitability for your group. Beach descents and swimming are not part of this suggested route. Stops may change with weather and sea conditions.",
+  "note_ja": "海上移動と起伏のある島内道路を利用します。参加者の皆さまに合うプランか事前にご相談ください。このモデルコースにはビーチへの下りや遊泳は含まれていません。天候や海況により訪問先が変わる場合があります。",
+  "pack": "Comfortable shoes, sun protection, drinking water, and a light waterproof bag. Ask the boat operator about boarding arrangements.",
+  "pack_ja": "歩きやすい靴、日よけ、飲料水、軽い防水バッグをご用意ください。乗船方法は事前にボート運航会社へご確認ください。",
+  "order": 3
+}

@@ -1,0 +1,40 @@
+{
+  "slug": "ubud",
+  "name": "Ubud",
+  "name_ja": "ウブド",
+  "category": "CULTURE & GREENERY",
+  "category_ja": "文化と緑にふれる",
+  "intro": "Rice terraces, village streets, and a gentler side of Bali.",
+  "intro_ja": "棚田や街歩きを楽しみながら、バリの自然と文化にふれる旅。",
+  "heading": "A day shaped by nature and culture.",
+  "heading_ja": "緑の風景と、バリの文化を訪ねて。",
+  "description": "Explore an Ubud route built around the places that interest you. Start with rice terraces and town sights, then discuss temple stops, a lunch break, and the pace that suits your group.",
+  "description_ja": "美しい棚田やウブドの街を中心に、ご希望に合ったルートをご相談ください。寺院への立ち寄りやランチ休憩、観光のペースも事前に確認できます。",
+  "steps": [
+    [
+      "Your hotel or agreed meeting point",
+      "ホテルまたは事前に決めた集合場所"
+    ],
+    [
+      "Tegallalang rice terrace viewpoints",
+      "テガラランの棚田を眺める"
+    ],
+    [
+      "Ubud town and a lunch break",
+      "ウブドの街歩きとランチ休憩"
+    ],
+    [
+      "A temple or cultural stop, by arrangement",
+      "ご相談に応じた寺院や文化スポットへの立ち寄り"
+    ],
+    [
+      "Return to the agreed drop-off point",
+      "事前に決めた場所へお送り"
+    ]
+  ],
+  "note": "Tell us if you prefer less walking or are travelling with children. Temple access and dress requirements depend on the site.",
+  "note_ja": "歩く距離を少なくしたい場合や、お子さま連れの場合は事前にお知らせください。寺院の入場条件や服装は訪問先によって異なります。",
+  "pack": "Comfortable shoes, sun protection, drinking water, and clothing suitable for temple visits.",
+  "pack_ja": "歩きやすい靴、日よけ、飲料水、寺院訪問に適した服装をご用意ください。",
+  "order": 1
+}

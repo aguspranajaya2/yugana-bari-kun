@@ -1,0 +1,28 @@
+---
+import { BRAND } from '../data/site';
+import { localize, localizedPath, type Locale } from '../i18n/index';
+interface Props { lang:Locale; pagePath:string }
+const { lang, pagePath } = Astro.props;
+const t = (en:string,ja:string) => localize(lang,{en,ja});
+const links = [ ['#tours',t('Our tours','ツアー')], ['#about',t('Our approach','私たちについて')], ['#faq',t('Good to know','よくあるご質問')], ['#contact',t('Plan your trip','旅のご相談')] ];
+---
+<a class="skip-link" href="#main-content">{t('Skip to content','本文へ移動')}</a>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href={localizedPath(lang)} aria-label={`${BRAND} — ${t('Home','ホーム')}`}>
+    <span class="brand-name">{BRAND}</span><span class="brand-caption">BALI, AT YOUR OWN PACE</span>
+  </a>
+  <nav id="primary-navigation" class="primary-navigation" aria-label={t('Main navigation','メインナビゲーション')}>
+    {links.map(([hash,label],index) => <a href={`${localizedPath(lang)}${hash}`} class:list={{'nav-contact':index===3}}>{label}</a>)}
+  </nav>
+  <div class="header-actions">
+    <div class="language-switcher" role="group" aria-label={t('Website language','サイトの言語')}>
+      <a href={localizedPath('ja',pagePath)} data-language="ja" lang="ja" class:list={{active:lang==='ja'}} aria-current={lang==='ja'?'page':undefined}>日本語</a>
+      <a href={localizedPath('en',pagePath)} data-language="en" lang="en" class:list={{active:lang==='en'}} aria-current={lang==='en'?'page':undefined}>EN</a>
+    </div>
+    <button type="button" class="theme-toggle" data-theme-toggle aria-label={t('Switch colour theme','表示テーマを切り替える')} aria-pressed="false">
+      <svg class="theme-moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M20.8 13.3A8.9 8.9 0 0 1 10.7 3.2 8.9 8.9 0 1 0 20.8 13.3Z" /></svg>
+      <svg class="theme-sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="4" /><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4" /></svg>
+    </button>
+    <button class="menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label={t('Open menu','メニューを開く')}><span></span><span></span></button>
+  </div>
+</div></header>

@@ -1,0 +1,45 @@
+---
+import { localizedPath, type Locale } from '../i18n/index';
+import { getCopy } from '../i18n/privacy';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const copy = getCopy(lang);
+---
+<section class="legal-page page-shell">
+  <p class="eyebrow">{copy.websiteInformation}</p>
+  <h1>{copy.privacyYourInquiry}</h1>
+  <p class="updated">{copy.lastUpdated27October2026}</p>
+  <section>
+    <h2>{copy.websiteAndContact}</h2>
+    <p>{copy.thisWebsitePresentsBaliTravelIdeasUnderTheName}</p>
+  </section>
+  <section>
+    <h2>{copy.theInquiryForm}</h2>
+    <p>{copy.theFormPreparesAWhatsappMessageInYourBrowser}</p>
+  </section>
+  <section>
+    <h2>{copy.informationYouChooseToShare}</h2>
+    <p>{copy.shareOnlyWhatIsNeededToDiscussYourTrip}</p>
+  </section>
+  <section>
+    <h2>{copy.languageAppearance}</h2>
+    <p>{copy.englishAndJapaneseUseSeparatePageAddressesEnglishIs}</p>
+  </section>
+  <section>
+    <h2>{copy.hostingAndExternalServices}</h2>
+    <p>{copy.thisWebsiteUsesCloudflareHostingAndDoesNotInclude}</p>
+  </section>
+  <section>
+    <h2>{copy.tourInformationAndBooking}</h2>
+    <p>{copy.tourRoutesAndImagesAreIllustrativePublishedRouteIdeas}</p>
+  </section>
+  <p class="external-policies">
+    <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener noreferrer">
+      Cloudflare Privacy Policy ↗
+    </a>
+    <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
+      WhatsApp Privacy Policy ↗
+    </a>
+  </p>
+  <a href={localizedPath(lang, "/")} class="text-link">{copy.backToTheWebsite}</a>
+</section>

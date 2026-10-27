@@ -1,0 +1,223 @@
+---
+import { localizedPath, type Locale } from '../i18n/index';
+import { getCopy } from '../i18n/home';
+import { getCollection } from 'astro:content';
+import TourCard from './TourCard.astro';
+import QuoteForm from './QuoteForm.astro';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const copy = getCopy(lang);
+const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data.order);
+---
+<section class="home-hero page-shell">
+  <div class="hero-copy">
+    <p class="eyebrow">{copy.aLittleCloserToBali}</p>
+    <h1>
+      <span>{copy.baliAtYour}</span>
+      <em>{copy.ownPace}</em>
+    </h1>
+    <p class="hero-description">{copy.fromQuietRiceTerracesToOceanSunsetsFindYour}</p>
+    <div class="hero-actions">
+      <a href="#tours" class="button">{copy.exploreOurTours}</a>
+      <a href="#how-it-works" class="text-link">{copy.howToPlanYourTrip}</a>
+    </div>
+    <div class="hero-footnote">
+      <span class="small-sun" aria-hidden="true">
+        ✳
+      </span>
+      <span>{copy.englishJapaneseWebsiteIndividualQuotes}</span>
+    </div>
+  </div>
+  <div class="hero-media">
+    <img src="/images/ubud.jpg" alt="Rice terraces and palms, Ubud travel inspiration" width="433" height="650" fetchpriority="high" />
+    <div class="hero-image-note">
+      <span class="location-dot" aria-hidden="true">
+      </span>
+      <div>
+        <span class="image-note-eyebrow">{copy.slowMomentsLastingMemories}</span>
+        <p>{copy.somewhereYouLlWantToStayALittleLonger}</p>
+      </div>
+    </div>
+    <span class="hero-vertical" aria-hidden="true">
+      NATURE · CULTURE · ISLAND LIFE
+    </span>
+  </div>
+</section>
+<section id="tours" class="section page-shell">
+  <div class="section-top">
+    <div>
+      <p class="eyebrow">{copy.findYourIslandMoment}</p>
+      <h2>{copy.threePlacesEndlessPossibilities}</h2>
+    </div>
+    <p class="section-intro">{copy.startWithAPlaceYouLoveEachRouteIs}</p>
+  </div>
+  <div class="tour-grid">{tours.map((tour, index) => <TourCard tour={tour} index={index + 1} lang={lang} />)}</div>
+</section>
+<section id="how-it-works" class="planning-section">
+  <div class="page-shell planning-inner">
+    <div>
+      <p class="eyebrow">{copy.aGoodTripStartsWithAConversation}</p>
+      <h2>{copy.fromAnIdeaToYourItinerary}</h2>
+      <p>{copy.aClearPlanBeforeYouBookWithRoomFor}</p>
+    </div>
+    <ol class="planning-steps">
+      <li>
+        <span>
+          01
+        </span>
+        <div>
+          <h3>{copy.tellUsYourIdea}</h3>
+          <p>{copy.shareYourDatesGuestsHotelAreaAndThePlaces}</p>
+        </div>
+      </li>
+      <li>
+        <span>
+          02
+        </span>
+        <div>
+          <h3>{copy.discussYourQuote}</h3>
+          <p>{copy.checkTheRouteTotalPriceTransportGuideLanguageAnd}</p>
+        </div>
+      </li>
+      <li>
+        <span>
+          03
+        </span>
+        <div>
+          <h3>{copy.confirmTheDetails}</h3>
+          <p>{copy.agreeOnTheArrangementsAndBookingConditionsThenReceive}</p>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+<section id="about" class="section page-shell about-section">
+  <div class="about-image">
+    <img src="/images/about-bali.jpg" alt="Illustrative Bali landscape with rice fields, temples and the coast" width="1408" height="768" loading="lazy" decoding="async" />
+    <span class="image-caption">{copy.theIslandIsOnlyTheBeginning}</span>
+  </div>
+  <div class="about-copy">
+    <p class="eyebrow">{copy.theYGanaBariKunApproach}</p>
+    <h2>{copy.aTripShouldFeelLikeYours}</h2>
+    <p>{copy.aLittleNatureALittleCultureOrTimeBy}</p>
+    <p>{copy.ourWebsiteIsAvailableInEnglishAndJapaneseTell}</p>
+    <a href="#contact" class="text-link">{copy.letSTalkAboutYourTrip}</a>
+  </div>
+</section>
+<section class="travel-prep section">
+  <div class="page-shell">
+    <div class="section-top">
+      <div>
+        <p class="eyebrow">{copy.beforeYouArrive}</p>
+        <h2>{copy.aLittlePreparationASmootherArrival}</h2>
+      </div>
+      <p class="section-intro">{copy.checkTheLatestRequirementsDirectlyWithOfficialSourcesBefore}</p>
+    </div>
+    <div class="prep-grid">
+      <a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noopener noreferrer">
+        <span class="prep-number">
+          01 / ENTRY
+        </span>
+        <h3>{copy.entryVisaInformation}</h3>
+        <p>{copy.officialIndonesianImmigrationPortalCheckTheRequirementsForYour}</p>
+      </a>
+      <a href="https://lovebali.baliprov.go.id/" target="_blank" rel="noopener noreferrer">
+        <span class="prep-number">
+          02 / LOVE BALI
+        </span>
+        <h3>{copy.baliTouristLevy}</h3>
+        <p>{copy.visitTheOfficialBaliGovernmentSiteForTheCurrent}</p>
+      </a>
+      <a href="https://www.denpasar.id.emb-japan.go.jp/" target="_blank" rel="noopener noreferrer">
+        <span class="prep-number">
+          03 / TRAVEL INFORMATION
+        </span>
+        <h3>{copy.informationForJapaneseVisitors}</h3>
+        <p>{copy.travelNoticesAndLocalInformationFromTheConsulateGeneral}</p>
+      </a>
+    </div>
+  </div>
+</section>
+<section id="faq" class="section page-shell faq-section">
+  <div class="faq-heading">
+    <p class="eyebrow">{copy.goodToKnow}</p>
+    <h2>{copy.aFewThingsYouMightBeWondering}</h2>
+    <p>{copy.clearDetailsMakeItEasierToPlanIfSomething}</p>
+  </div>
+  <div class="faq-list">
+    <details>
+      <summary>
+        <span>{copy.howDoIGetAPrice}</span>
+        <span class="faq-plus" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <p>{copy.sendYourPreferredTourTravelDateNumberOfAdults}</p>
+    </details>
+    <details>
+      <summary>
+        <span>{copy.isAJapaneseSpeakingGuideIncluded}</span>
+        <span class="faq-plus" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <p>{copy.thisWebsiteIsAvailableInEnglishAndJapaneseGuide}</p>
+    </details>
+    <details>
+      <summary>
+        <span>{copy.areHotelTransfersTicketsAndMealsIncluded}</span>
+        <span class="faq-plus" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <p>{copy.askForAnItemisedQuoteCoveringPickupAndDrop}</p>
+    </details>
+    <details>
+      <summary>
+        <span>{copy.canIAdjustTheRouteOrTravelWithChildren}</span>
+        <span class="faq-plus" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <p>{copy.tellUsYourPrioritiesAgesOfChildrenWalkingPreferences}</p>
+    </details>
+    <details>
+      <summary>
+        <span>{copy.howArePaymentAndCancellationHandled}</span>
+        <span class="faq-plus" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <p>{copy.confirmThePaymentMethodDepositIfAnyCancellationConditions}</p>
+    </details>
+    <details>
+      <summary>
+        <span>{copy.doesSendingAnInquiryConfirmMyBooking}</span>
+        <span class="faq-plus" aria-hidden="true">
+          +
+        </span>
+      </summary>
+      <p>{copy.anInquiryStartsTheConversationYourBookingIsOnly}</p>
+    </details>
+  </div>
+</section>
+<section id="contact" class="contact-section">
+  <div class="page-shell contact-inner">
+    <div class="contact-copy">
+      <p class="eyebrow">{copy.yourNextChapter}</p>
+      <h2>{copy.letSMakeRoomForALittleBali}</h2>
+      <p>{copy.tellUsWhatYourIdealTripLooksLikeWe}</p>
+      <a class="contact-number" href="https://wa.me/6281338575123" target="_blank" rel="noopener noreferrer">
+        <span>
+          WhatsApp ↗
+        </span>
+        <strong>
+          +62 813 3857 5123
+        </strong>
+      </a>
+      <p class="contact-small">{copy.preferToStartWithASimpleMessageOpenWhatsapp}</p>
+      <a href={localizedPath(lang, "/privacy")} class="privacy-link">{copy.privacyInquiryInformation}</a>
+    </div>
+    <QuoteForm lang={lang} />
+  </div>
+</section>

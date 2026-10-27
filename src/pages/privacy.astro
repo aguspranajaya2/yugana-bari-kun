@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Content from '../components/PrivacyContent.astro';
+import { BRAND } from '../data/site';
+---
+<BaseLayout lang="en" pagePath="/privacy" title={`Privacy & website information | ${BRAND}`} description="Website and inquiry information." mobile={false} noindex={false}><Content lang="en" /></BaseLayout>

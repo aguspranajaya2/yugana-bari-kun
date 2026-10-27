@@ -1,0 +1,18 @@
+---
+import { WHATSAPP_NUMBER } from '../data/site';
+import { localize, type Locale } from '../i18n/index';
+interface Props { lang:Locale; tour?:string; label?:string; class?:string }
+const { lang, tour='general', label, class:className='button' } = Astro.props;
+const names: Record<Locale,Record<string,string>> = {
+  en:{general:'a Bali trip',ubud:'an Ubud tour',uluwatu:'an Uluwatu tour','nusa-penida':'a Nusa Penida tour'},
+  ja:{general:'バリ島旅行',ubud:'ウブドツアー',uluwatu:'ウルワツツアー','nusa-penida':'ヌサペニダツアー'},
+};
+const topic = Object.hasOwn(names[lang],tour) ? names[lang][tour] : names[lang].general;
+const message = lang === 'ja'
+  ? `Yūgana Bari-kun様、こんにちは。${topic}について相談したいです。料金とプランの詳細を教えてください。`
+  : `Hello Yūgana Bari-kun! I would like to ask about ${topic}. Please help me with a quote and the tour details.`;
+const href = `https://wa.me/${WHATSAPP_NUMBER}?${new URLSearchParams({text:message})}`;
+---
+<a class={className} href={href} target="_blank" rel="noopener noreferrer" data-whatsapp={tour}>
+  {label || localize(lang,{en:'Ask for a quote ↗',ja:'お見積もり・ご相談 ↗'})}
+</a>

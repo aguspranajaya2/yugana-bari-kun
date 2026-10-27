@@ -1,0 +1,15 @@
+---
+import { localizedPath, type Locale } from '../i18n/index';
+import { getCopy } from '../i18n/error';
+interface Props { lang: Locale }
+const { lang } = Astro.props;
+const copy = getCopy(lang);
+---
+<section class="error-page page-shell">
+  <p class="eyebrow">
+    404 / A SMALL DETOUR
+  </p>
+  <h1>{copy.letSFindYourWayBack}</h1>
+  <p>{copy.thisPageCouldNotBeFoundYourBaliInspiration}</p>
+  <a href={localizedPath(lang, "/")} class="button">{copy.backToTheHomepage}</a>
+</section>

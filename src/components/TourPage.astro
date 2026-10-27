@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WhatsAppLink from './WhatsAppLink.astro';
+import { BRAND, TOUR_IDS, TOUR_NAMES } from '../data/site';
+import { localize, localizedPath, tourPath, type Locale } from '../i18n/index';
+interface Props { lang:Locale; tour:CollectionEntry<'tours'> }
+const { lang, tour:{data:tour} } = Astro.props;
+const t = (en:string,ja:string) => localize(lang,{en,ja});
+const name = t(tour.name,tour.name_ja);
+const intro = t(tour.intro,tour.intro_ja);
+const pagePath = `/pages/${tour.slug}`;
+---
+<BaseLayout lang={lang} pagePath={pagePath} title={`${name} ${t('Tour','ツアー')} | ${BRAND}`} description={intro} tour={tour.slug}>
+  <section class="tour-hero page-shell"><div class="tour-hero-copy">
+    <a class="back-link" href={`${localizedPath(lang)}#tours`}>{t('← All tours','← ツアー一覧へ')}</a>
+    <p class="eyebrow">{t(tour.category,tour.category_ja)}</p><h1>{name}</h1><p class="hero-description">{intro}</p>
+    <WhatsAppLink lang={lang} tour={tour.slug} label={t('Let’s plan this trip ↗','この旅について相談する ↗')} />
+  </div><div class="tour-hero-image"><img src={`/images/${tour.slug}.jpg`} alt={t(`${name} travel inspiration`,`${name}の旅のイメージ`)} fetchpriority="high" /></div></section>
+  <div class="tour-detail page-shell">
+    <aside class="tour-quote-card" aria-labelledby="quote-heading"><p class="eyebrow">{t('YOUR TRIP, YOUR QUOTE','ご希望に合わせたプランを')}</p><h2 id="quote-heading">{t('Price on request','お見積もり')}</h2><p>{t('The price and schedule depend on your travel date, group, pickup area, and chosen route.','料金とスケジュールは、旅行日・人数・送迎エリア・ご希望のルートにより異なります。')}</p>
+      <dl class="quote-facts"><div><dt>{t('Schedule','所要時間')}</dt><dd>{t('Confirmed with your plan','プランとあわせてご確認')}</dd></div><div><dt>{t('Pickup & transport','送迎・移動手段')}</dt><dd>{t('Confirm the area and arrangements','対象エリア・手配内容を要確認')}</dd></div><div><dt>{t('Guide language','ガイドの対応言語')}</dt><dd>{t('Please ask before booking','ご予約前にご確認')}</dd></div></dl>
+      <WhatsAppLink lang={lang} tour={tour.slug} label={t('Ask about this tour ↗','このツアーについて相談 ↗')} class="button button-wide" /><p class="form-note">{t('No booking is confirmed by an inquiry alone.','お問い合わせだけでは予約確定になりません。')}</p>
+    </aside>
+    <article class="tour-article"><p class="eyebrow">{t('THE EXPERIENCE','旅のイメージ')}</p><h2>{t(tour.heading,tour.heading_ja)}</h2><p class="article-lead">{t(tour.description,tour.description_ja)}</p>
+      <section class="itinerary-section"><h3>{t('A suggested route','モデルコース')}</h3><p>{t('A starting point for your plans. Exact stops, timings, and inclusions will be agreed before booking.','旅のご相談のための一例です。訪問先、時間、含まれるサービスは、ご予約前に確認します。')}</p>
+        <ol class="itinerary">{tour.steps.map(([en,ja])=><li><span class="itinerary-dot" aria-hidden="true"></span><span>{t(en,ja)}</span></li>)}</ol>
+      </section>
+      <section class="detail-note"><h3>{t('A note for this trip','このプランについて')}</h3><p>{t(tour.note,tour.note_ja)}</p></section>
+      <section class="article-section"><h3>{t('Before you book','ご予約前の確認事項')}</h3><p>{t('Please request a full breakdown of transport, guide services, admission tickets, meals, and any optional activities. Confirm the total price, payment method, and cancellation or weather-related conditions in writing.','移動、ガイド、入場料、食事、オプション体験について、含まれる内容の内訳をご確認ください。総額、お支払い方法、キャンセルや天候による変更の条件も、書面やメッセージでご確認ください。')}</p></section>
+      <section class="article-section"><h3>{t('What to bring','持ち物のヒント')}</h3><p>{t(tour.pack,tour.pack_ja)}</p></section>
+    </article>
+  </div>
+  <section class="more-tours section page-shell"><div class="section-top"><div><p class="eyebrow">{t('MORE ISLAND INSPIRATION','ほかのエリアも見る')}</p><h2>{t('Where else could your trip take you?','次に気になるのは、どの風景？')}</h2></div></div><div class="related-links">{TOUR_IDS.filter(id=>id!==tour.slug).map(id=><a href={tourPath(lang,id)}>{TOUR_NAMES[lang][id]} ↗</a>)}</div></section>
+</BaseLayout>

@@ -1,0 +1,7 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HomeContent from '../components/HomeContent.astro';
+import { BRAND } from '../data/site';
+const lang = 'en';
+---
+<BaseLayout lang={lang} pagePath="/" title={`${BRAND} | Bali, at your own pace.`} description="Explore Ubud, Uluwatu and Nusa Penida. Discuss your itinerary and request a personalised quote on WhatsApp."><HomeContent lang={lang} /></BaseLayout>

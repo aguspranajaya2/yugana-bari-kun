@@ -1,0 +1,14 @@
+---
+import { BRAND, WHATSAPP_NUMBER } from '../data/site';
+import { localize, localizedPath, type Locale } from '../i18n/index';
+interface Props { lang:Locale }
+const { lang } = Astro.props;
+const t = (en:string,ja:string) => localize(lang,{en,ja});
+---
+<footer class="site-footer"><div class="footer-inner">
+  <div><a class="brand footer-brand" href={localizedPath(lang)}><span class="brand-name">{BRAND}</span><span class="brand-caption">RELAX. EXPLORE. ENJOY BALI.</span></a>
+  <p class="footer-intro">{t('Thoughtful journeys. Island moments. Your kind of Bali.','自分らしいペースで、心に残るバリの旅。')}</p></div>
+  <div class="footer-contact"><a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">WhatsApp · +62 813 3857 5123 ↗</a>
+  <a href={localizedPath(lang,'/privacy')}>{t('Privacy & website information','プライバシー・サイト情報')}</a></div>
+  <div class="footer-bottom"><p>© 2026 {BRAND}</p><p>{t('Images are illustrative. Routes and services are confirmed with your quote.','画像はイメージです。行程やサービスの詳細はお見積もり時にご確認ください。')}</p></div>
+</div></footer>

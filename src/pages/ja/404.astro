@@ -1,0 +1,6 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Content from '../../components/ErrorContent.astro';
+import { BRAND } from '../../data/site';
+---
+<BaseLayout lang="ja" pagePath="/404" title={`ページが見つかりません | ${BRAND}`} description="サイトとお問い合わせについてのご案内。" mobile={false} noindex={true}><Content lang="ja" /></BaseLayout>

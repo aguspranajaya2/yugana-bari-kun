@@ -1,0 +1,47 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppLink from '../components/WhatsAppLink.astro';
+import { BRAND, SITE_URL } from '../data/site';
+import { localize, localizedPath, type Locale } from '../i18n/index';
+import '../styles/global.css';
+interface Props { lang:Locale; pagePath:string; title:string; description:string; tour?:string; mobile?:boolean; noindex?:boolean }
+const { lang, pagePath, title, description, tour='general', mobile=true, noindex=false } = Astro.props;
+const canonical = new URL(localizedPath(lang,pagePath),SITE_URL).href;
+const image = `${SITE_URL}/images/about-bali.jpg`;
+---
+<!DOCTYPE html>
+<html lang={lang} data-path-en={localizedPath('en',pagePath)} data-path-ja={localizedPath('ja',pagePath)} data-error-page={noindex?'true':undefined}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#faf7f0" />
+    <meta name="color-scheme" content="light dark" />
+    {noindex ? <meta name="robots" content="noindex" /> : <>
+      <link rel="canonical" href={canonical} />
+      <link rel="alternate" hreflang="en" href={new URL(localizedPath('en',pagePath),SITE_URL).href} />
+      <link rel="alternate" hreflang="ja" href={new URL(localizedPath('ja',pagePath),SITE_URL).href} />
+      <link rel="alternate" hreflang="x-default" href={new URL(localizedPath('en',pagePath),SITE_URL).href} />
+    </>}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={BRAND} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang==='ja'?'ja_JP':'en_US'} />
+    <meta property="og:image" content={image} />
+    <meta property="og:image:alt" content={localize(lang,{en:'Illustrative Bali landscape',ja:'バリ島のイメージ風景'})} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline src="/theme-init.js?v=20261027-astro"></script>
+    <script is:inline src="/main.js?v=20261027-astro" defer></script>
+  </head>
+  <body class:list={{'with-mobile-contact':mobile}}>
+    <Header lang={lang} pagePath={pagePath} />
+    <main id="main-content"><slot /></main>
+    <Footer lang={lang} />
+    {mobile && <div class="mobile-contact"><span>{localize(lang,{en:'Your Bali, your way.',ja:'あなたらしいバリの旅。'})}</span><WhatsAppLink lang={lang} tour={tour} label={localize(lang,{en:'Let’s plan ↗',ja:'旅のご相談 ↗'})} class="button button-small" /></div>}
+  </body>
+</html>

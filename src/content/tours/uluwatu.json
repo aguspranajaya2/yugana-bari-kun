@@ -1,0 +1,44 @@
+{
+  "slug": "uluwatu",
+  "name": "Uluwatu",
+  "name_ja": "ウルワツ",
+  "category": "COASTLINE & SUNSET",
+  "category_ja": "海岸線と夕暮れ",
+  "intro": "Ocean cliffs, temple scenery, and the colours of sunset.",
+  "intro_ja": "断崖の風景、海を望む寺院、そして夕暮れのひととき。",
+  "heading": "Follow the coast into golden hour.",
+  "heading_ja": "海を眺めて、夕暮れを待つ。",
+  "description": "Discover the southern coastline and Uluwatu Temple. If you would like to see a Kecak performance, ask about tickets and availability when requesting your quote.",
+  "description_ja": "バリ島南部の海岸線とウルワツ寺院を訪ねるプランです。ケチャダンス鑑賞をご希望の場合は、お見積もり時にチケットや空き状況をご確認ください。",
+  "steps": [
+    [
+      "Pickup at an agreed location",
+      "事前に決めた場所でお迎え"
+    ],
+    [
+      "A coastal stop in South Bali",
+      "バリ島南部の海岸スポットへ"
+    ],
+    [
+      "Uluwatu Temple and cliffside views",
+      "ウルワツ寺院と断崖の景色"
+    ],
+    [
+      "Sunset viewing, weather permitting",
+      "天候に応じて夕日鑑賞"
+    ],
+    [
+      "Optional Kecak performance, subject to availability",
+      "ご希望に応じてケチャダンス鑑賞（要空き状況確認）"
+    ],
+    [
+      "Return to the agreed drop-off point",
+      "事前に決めた場所へお送り"
+    ]
+  ],
+  "note": "Sunsets depend on the weather. Temple entry and Kecak tickets must be confirmed separately in your quote. Keep belongings secured around monkeys and stay behind cliff barriers.",
+  "note_ja": "夕日は天候に左右されます。寺院の入場料とケチャダンスのチケットが含まれるか、お見積もりでご確認ください。猿のいる場所では持ち物に注意し、崖の柵の内側で見学してください。",
+  "pack": "Sun protection, drinking water, comfortable footwear, and clothing suitable for the temple.",
+  "pack_ja": "日よけ、飲料水、歩きやすい靴、寺院訪問に適した服装をご用意ください。",
+  "order": 2
+}
