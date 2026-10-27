@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://bali-nagomi.pages.dev/sitemap.xml
+Sitemap: https://yugana-bari-kun.pages.dev/sitemap.xml

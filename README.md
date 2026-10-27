@@ -2,7 +2,7 @@
 
 Website tur Bali untuk wisatawan Jepang, dibangun dengan **Astro**, **TypeScript**, dan **CSS**. Tersedia dalam bahasa Inggris dan Jepang, dengan tampilan responsif, dark mode, serta konsultasi perjalanan melalui WhatsApp.
 
-[Lihat website](https://bali-nagomi.pages.dev) · [Versi Jepang](https://bali-nagomi.pages.dev/ja) · [Laporan keamanan](SECURITY-REVIEW.md)
+[Lihat website](https://yugana-bari-kun.pages.dev) · [Versi Jepang](https://yugana-bari-kun.pages.dev/ja) · [Laporan keamanan](SECURITY-REVIEW.md)
 
 ## Fitur
 
@@ -37,7 +37,7 @@ Buka alamat lokal yang ditampilkan terminal.
 | `pnpm run preview` | Melihat hasil build secara lokal. |
 | `pnpm audit` | Memeriksa advisori keamanan dependency. |
 
-Versi dependency dikunci dalam `pnpm-lock.yaml`.
+Versi dependency dikunci dalam `pnpm-lock.yaml`. Proyek memakai pnpm 11.25.0 dan file `.node-version` memilih Node.js 24.22.1 yang dipakai saat pemeriksaan lokal.
 
 ## Struktur proyek
 
@@ -89,7 +89,7 @@ Tema awal mengikuti pengaturan perangkat. Tombol matahari/bulan mengganti light/
 
 ## Publikasi ke Cloudflare Pages
 
-Proyek menggunakan nama **`bali-nagomi`** dengan branch production **`main`**.
+Proyek menggunakan nama **`yugana-bari-kun`** dengan branch production **`main`**.
 
 Periksa dan build proyek terlebih dahulu:
 
@@ -101,12 +101,12 @@ pnpm run build
 Setelah login ke akun Cloudflare melalui Wrangler, publikasikan hasil build:
 
 ```sh
-pnpm dlx wrangler@4.153.0 pages deploy dist --project-name bali-nagomi --branch main
+pnpm dlx wrangler@4.153.0 pages deploy dist --project-name yugana-bari-kun --branch main
 ```
 
 Untuk upload melalui dashboard, unggah **isi folder `dist/`** dengan `index.html` berada di akar paket. Folder source, `node_modules/`, cache, dan konfigurasi pengembangan tidak perlu diunggah.
 
-Push ke GitHub dan deployment Cloudflare saat ini merupakan langkah terpisah; repository ini belum mengatur deployment otomatis.
+Untuk proyek Pages yang sudah terhubung ke GitHub, push ke branch `main` memicu build dan deployment otomatis. Saat membuat proyek, gunakan preset **Astro**, build command **`pnpm run build`**, dan output directory **`dist`**. Atur environment variable **`PNPM_VERSION=11.25.0`** agar Cloudflare memakai versi pnpm yang sama. Versi Node.js diambil dari file `.node-version` pada repository.
 
 ## Menggunakan domain sendiri
 

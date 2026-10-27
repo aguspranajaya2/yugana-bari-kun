@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://bali-nagomi.pages.dev',
+  site: 'https://yugana-bari-kun.pages.dev',
   output: 'static',
   trailingSlash: 'never',
   i18n: {
