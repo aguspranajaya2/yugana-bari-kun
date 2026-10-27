@@ -1,4 +1,5 @@
 ---
+import Photo from './Photo.astro';
 import { localizedPath, type Locale } from '../i18n/index';
 import { getCopy } from '../i18n/home';
 import { getCollection } from 'astro:content';
@@ -29,7 +30,7 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
     </div>
   </div>
   <div class="hero-media">
-    <img src="/images/ubud.jpg" alt="Rice terraces and palms, Ubud travel inspiration" width="433" height="650" fetchpriority="high" />
+    <Photo src="/images/ubud.jpg" alt="Rice terraces and palms, Ubud travel inspiration" width="433" height="650" fetchpriority="high" />
     <div class="hero-image-note">
       <span class="location-dot" aria-hidden="true">
       </span>
@@ -93,7 +94,7 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
 </section>
 <section id="about" class="section page-shell about-section">
   <div class="about-image">
-    <img src="/images/about-bali.jpg" alt="Illustrative Bali landscape with rice fields, temples and the coast" width="1408" height="768" loading="lazy" decoding="async" />
+    <Photo src="/images/about-bali.jpg" alt="Illustrative Bali landscape with rice fields, temples and the coast" width="1408" height="768" loading="lazy" decoding="async" />
     <span class="image-caption">{copy.theIslandIsOnlyTheBeginning}</span>
   </div>
   <div class="about-copy">

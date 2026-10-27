@@ -1,4 +1,5 @@
 ---
+import Photo from './Photo.astro';
 import type { CollectionEntry } from 'astro:content';
 import { localize, tourPath, type Locale } from '../i18n/index';
 interface Props { tour:CollectionEntry<'tours'>; index:number; lang:Locale }
@@ -7,7 +8,7 @@ const name = lang==='ja' ? tour.name_ja : tour.name;
 ---
 <article class="tour-card">
   <a class="tour-image-link" href={tourPath(lang,tour.slug)} aria-label={localize(lang,{en:`Explore ${name}`,ja:`${name}のツアーを見る`})}>
-    <img src={`/images/${tour.slug}.jpg`} alt={localize(lang,{en:`${name} travel inspiration`,ja:`${name}の旅のイメージ`})} loading="lazy" decoding="async" />
+    <Photo src={`/images/${tour.slug}.jpg`} alt={localize(lang,{en:`${name} travel inspiration`,ja:`${name}の旅のイメージ`})} loading="lazy" decoding="async" />
     <span class="image-number">{String(index).padStart(2,'0')}</span>
   </a>
   <div class="tour-card-content">
