@@ -1,0 +1,10 @@
+---
+import { LINE_ID, LINE_URL } from '../data/site';
+import { localize, type Locale } from '../i18n/index';
+
+interface Props { lang: Locale; class?: string }
+const { lang, class: className = 'button button-secondary' } = Astro.props;
+---
+<a class={className} href={LINE_URL} target="_blank" rel="noopener noreferrer" data-line={LINE_ID}>
+  {localize(lang, { en: 'Ask on LINE ↗', ja: 'LINEで相談する ↗' })}
+</a>

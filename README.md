@@ -1,6 +1,6 @@
 # Yūgana Bari-kun
 
-Website tur Bali untuk wisatawan Jepang, dibangun dengan **Astro**, **TypeScript**, dan **CSS**. Tersedia dalam bahasa Inggris dan Jepang, dengan tampilan responsif, dark mode, serta konsultasi perjalanan melalui WhatsApp.
+Website tur Bali untuk wisatawan Jepang, dibangun dengan **Astro**, **TypeScript**, dan **CSS**. Tersedia dalam bahasa Inggris dan Jepang, dengan tampilan responsif, dark mode, serta konsultasi perjalanan melalui WhatsApp dan LINE (ID: `silawati123`).
 
 [Lihat website](https://yugana-bari-kun.pages.dev) · [Versi Jepang](https://yugana-bari-kun.pages.dev/ja) · [Laporan keamanan](SECURITY-REVIEW.md)
 
@@ -72,7 +72,7 @@ pnpm-lock.yaml             # Versi dependency terkunci
 | Header, footer, kartu tur, dan formulir | `src/components/` |
 | Warna, dark mode, dan tata letak | `src/styles/global.css` |
 | Foto dan ilustrasi | `public/images/` |
-| Nama brand, WhatsApp, dan URL situs | `src/data/site.ts` |
+| Nama brand, WhatsApp, LINE, dan URL situs | `src/data/site.ts` |
 
 Pada data tur, field tanpa akhiran `_ja` menggunakan bahasa Inggris, sedangkan field dengan `_ja` menggunakan bahasa Jepang. Setiap item `steps` berisi pasangan teks Inggris dan Jepang. Data divalidasi melalui `src/content.config.ts` saat build.
 

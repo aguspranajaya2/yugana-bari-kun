@@ -1,5 +1,7 @@
 export const BRAND = 'Yūgana Bari-kun';
 export const WHATSAPP_NUMBER = '6281338575123';
+export const LINE_ID = 'silawati123';
+export const LINE_URL = `https://line.me/ti/p/~${encodeURIComponent(LINE_ID)}`;
 export const SITE_URL = 'https://yugana-bari-kun.pages.dev';
 export const TOUR_IDS = ['ubud','uluwatu','nusa-penida'] as const;
 export const TOUR_NAMES = {

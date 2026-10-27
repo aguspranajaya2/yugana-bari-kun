@@ -60,6 +60,10 @@ p { color: var(--muted); }
 .text-link { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; font-weight: 650; text-decoration-thickness: 1px; }
 .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 52px; padding: 14px 26px; border: 1px solid var(--forest); border-radius: 999px; background: var(--button-bg); color: var(--button-text); font-size: 13px; font-weight: 600; line-height: 1.5; text-decoration: none; text-align: center; transition: background .2s, transform .2s, box-shadow .2s; }
 .button-wide { width: 100%; }
+.button-secondary { border-color: var(--line); background: transparent; color: var(--ink); }
+.tour-quote-card .button-secondary { margin-top: 12px; }
+.contact-channels { display: flex; flex-wrap: wrap; gap: 0 32px; }
+.contact-channels .contact-number { min-height: 44px; }
 .button-small { min-height: 44px; padding: 10px 20px; }
 .skip-link { position: fixed; left: 16px; top: -100px; z-index: 100; padding: 10px 20px; background: var(--white); color: var(--forest); border-radius: 8px; }
 .skip-link:focus { top: 12px; }
@@ -238,6 +242,7 @@ p { color: var(--muted); }
 :lang(ja) .tour-article > h2 { font-size: 37px; }
 
 @media (hover: hover) {
+  .button-secondary:hover { color: var(--button-text); }
   .button:hover { transform: translateY(-2px); background: var(--button-hover); box-shadow: 0 5px 16px #183b3218; }
   .language-switcher [data-language]:hover { background: var(--sand); color: var(--ink); }
   .language-switcher [data-language].active:hover { background: var(--button-hover); color: var(--button-text); }

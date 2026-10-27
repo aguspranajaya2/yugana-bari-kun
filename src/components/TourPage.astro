@@ -3,6 +3,7 @@ import Photo from './Photo.astro';
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import WhatsAppLink from './WhatsAppLink.astro';
+import LineLink from './LineLink.astro';
 import { BRAND, TOUR_IDS, TOUR_NAMES } from '../data/site';
 import { localize, localizedPath, tourPath, type Locale } from '../i18n/index';
 interface Props { lang:Locale; tour:CollectionEntry<'tours'> }
@@ -21,7 +22,8 @@ const pagePath = `/pages/${tour.slug}`;
   <div class="tour-detail page-shell">
     <aside class="tour-quote-card" aria-labelledby="quote-heading"><p class="eyebrow">{t('YOUR TRIP, YOUR QUOTE','ご希望に合わせたプランを')}</p><h2 id="quote-heading">{t('Price on request','お見積もり')}</h2><p>{t('The price and schedule depend on your travel date, group, pickup area, and chosen route.','料金とスケジュールは、旅行日・人数・送迎エリア・ご希望のルートにより異なります。')}</p>
       <dl class="quote-facts"><div><dt>{t('Schedule','所要時間')}</dt><dd>{t('Confirmed with your plan','プランとあわせてご確認')}</dd></div><div><dt>{t('Pickup & transport','送迎・移動手段')}</dt><dd>{t('Confirm the area and arrangements','対象エリア・手配内容を要確認')}</dd></div><div><dt>{t('Guide language','ガイドの対応言語')}</dt><dd>{t('Please ask before booking','ご予約前にご確認')}</dd></div></dl>
-      <WhatsAppLink lang={lang} tour={tour.slug} label={t('Ask about this tour ↗','このツアーについて相談 ↗')} class="button button-wide" /><p class="form-note">{t('No booking is confirmed by an inquiry alone.','お問い合わせだけでは予約確定になりません。')}</p>
+      <WhatsAppLink lang={lang} tour={tour.slug} label={t('Ask about this tour ↗','このツアーについて相談 ↗')} class="button button-wide" />
+      <LineLink lang={lang} class="button button-secondary button-wide" /><p class="form-note">{t('No booking is confirmed by an inquiry alone.','お問い合わせだけでは予約確定になりません。')}</p>
     </aside>
     <article class="tour-article"><p class="eyebrow">{t('THE EXPERIENCE','旅のイメージ')}</p><h2>{t(tour.heading,tour.heading_ja)}</h2><p class="article-lead">{t(tour.description,tour.description_ja)}</p>
       <section class="itinerary-section"><h3>{t('A suggested route','モデルコース')}</h3><p>{t('A starting point for your plans. Exact stops, timings, and inclusions will be agreed before booking.','旅のご相談のための一例です。訪問先、時間、含まれるサービスは、ご予約前に確認します。')}</p>
