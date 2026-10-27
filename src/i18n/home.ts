@@ -56,7 +56,7 @@ const content = {
     "yourNextChapter": "YOUR NEXT CHAPTER",
     "letSMakeRoomForALittleBali": "Let’s make room for a little Bali.",
     "tellUsWhatYourIdealTripLooksLikeWe": "Tell us what your ideal trip looks like. We’ll start with your ideas and discuss the details together.",
-    "preferToStartWithASimpleMessageOpenWhatsapp": "Message us directly on WhatsApp or LINE. You can also search LINE for the ID shown above.",
+    "preferToStartWithASimpleMessageOpenWhatsapp": "Message us directly on WhatsApp or LINE.",
     "privacyInquiryInformation": "Privacy & inquiry information"
   },
   "ja": {
@@ -114,7 +114,7 @@ const content = {
     "yourNextChapter": "次の旅は、ここから。",
     "letSMakeRoomForALittleBali": "バリで過ごす時間を、一緒に。",
     "tellUsWhatYourIdealTripLooksLikeWe": "どんな旅を楽しみたいですか。ご希望をもとに、プランの詳細をご相談ください。",
-    "preferToStartWithASimpleMessageOpenWhatsapp": "WhatsAppまたはLINEから直接お問い合わせいただけます。LINEでは上記のIDでも検索できます。",
+    "preferToStartWithASimpleMessageOpenWhatsapp": "WhatsAppまたはLINEから直接お問い合わせいただけます。",
     "privacyInquiryInformation": "プライバシー・お問い合わせ情報"
   }
 } as const;

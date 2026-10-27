@@ -1,6 +1,6 @@
 ---
 import Photo from './Photo.astro';
-import { LINE_ID, LINE_URL, WHATSAPP_NUMBER } from '../data/site';
+import ContactChannels from './ContactChannels.astro';
 import { localizedPath, type Locale } from '../i18n/index';
 import { getCopy } from '../i18n/home';
 import { getCollection } from 'astro:content';
@@ -209,20 +209,7 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
       <p class="eyebrow">{copy.yourNextChapter}</p>
       <h2>{copy.letSMakeRoomForALittleBali}</h2>
       <p>{copy.tellUsWhatYourIdealTripLooksLikeWe}</p>
-      <div class="contact-channels">
-      <a class="contact-number" href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">
-        <span>
-          WhatsApp ↗
-        </span>
-        <strong>
-          +62 813 3857 5123
-        </strong>
-      </a>
-      <a class="contact-number" href={LINE_URL} target="_blank" rel="noopener noreferrer" data-line={LINE_ID}>
-        <span>LINE ↗</span>
-        <strong>{LINE_ID}</strong>
-      </a>
-      </div>
+      <ContactChannels lang={lang} />
       <p class="contact-small">{copy.preferToStartWithASimpleMessageOpenWhatsapp}</p>
       <a href={localizedPath(lang, "/privacy")} class="privacy-link">{copy.privacyInquiryInformation}</a>
     </div>
