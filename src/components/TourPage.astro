@@ -13,7 +13,7 @@ const name = t(tour.name,tour.name_ja);
 const intro = t(tour.intro,tour.intro_ja);
 const pagePath = `/pages/${tour.slug}`;
 ---
-<BaseLayout lang={lang} pagePath={pagePath} title={`${name} ${t('Tour','ツアー')} | ${BRAND}`} description={intro} tour={tour.slug}>
+<BaseLayout lang={lang} pagePath={pagePath} title={`${name}${t(' Tour in Bali','観光ツアー')} | ${BRAND}`} description={t(tour.description,tour.description_ja)} tour={tour.slug}>
   <section class="tour-hero page-shell"><div class="tour-hero-copy">
     <a class="back-link" href={`${localizedPath(lang)}#tours`}>{t('← All tours','← ツアー一覧へ')}</a>
     <p class="eyebrow">{t(tour.category,tour.category_ja)}</p><h1>{name}</h1><p class="hero-description">{intro}</p>

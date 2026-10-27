@@ -31,7 +31,7 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
     </div>
   </div>
   <div class="hero-media">
-    <Photo src="/images/ubud.jpg" alt="Rice terraces and palms, Ubud travel inspiration" width="433" height="650" fetchpriority="high" />
+    <Photo src="/images/ubud.jpg" alt={lang === 'ja' ? 'ウブド観光のイメージ：棚田とヤシの木' : 'Rice terraces and palms, Ubud travel inspiration'} width="433" height="650" fetchpriority="high" />
     <div class="hero-image-note">
       <span class="location-dot" aria-hidden="true">
       </span>
@@ -95,7 +95,7 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
 </section>
 <section id="about" class="section page-shell about-section">
   <div class="about-image">
-    <Photo src="/images/about-bali.jpg" alt="Illustrative Bali landscape with rice fields, temples and the coast" width="1408" height="768" loading="lazy" decoding="async" />
+    <Photo src="/images/about-bali.jpg" alt={lang === 'ja' ? '棚田、寺院、海岸が広がるバリ島のイメージ風景' : 'Illustrative Bali landscape with rice fields, temples and the coast'} width="1408" height="768" loading="lazy" decoding="async" />
     <span class="image-caption">{copy.theIslandIsOnlyTheBeginning}</span>
   </div>
   <div class="about-copy">

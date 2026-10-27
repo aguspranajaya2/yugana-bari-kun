@@ -2,7 +2,7 @@ import type { Locale } from "./index";
 
 const content = {
   "en": {
-    "aLittleCloserToBali": "A LITTLE CLOSER TO BALI",
+    "aLittleCloserToBali": "BALI TOURS · YOUR OWN PACE",
     "baliAtYour": "Bali, at your",
     "ownPace": "own pace.",
     "fromQuietRiceTerracesToOceanSunsetsFindYour": "From quiet rice terraces to ocean sunsets. Find your inspiration, then let’s shape a journey around you.",
@@ -60,7 +60,7 @@ const content = {
     "privacyInquiryInformation": "Privacy & inquiry information"
   },
   "ja": {
-    "aLittleCloserToBali": "バリを、もっと身近に。",
+    "aLittleCloserToBali": "バリ島観光ツアー・旅のご相談",
     "baliAtYour": "心ほどける、",
     "ownPace": "バリの旅。",
     "fromQuietRiceTerracesToOceanSunsetsFindYour": "緑の棚田から、海に沈む夕日まで。お気に入りの風景を見つけて、あなたらしい旅をご相談ください。",
