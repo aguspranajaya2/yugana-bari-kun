@@ -5,9 +5,9 @@ interface Props { lang:Locale }
 const { lang } = Astro.props;
 const t = (en:string,ja:string) => localize(lang,{en,ja});
 ---
-<form class="quote-form" action={`https://wa.me/${WHATSAPP_NUMBER}`} method="get" target="_blank" rel="noopener noreferrer">
+<form class="quote-form" action={`https://wa.me/${WHATSAPP_NUMBER}`} method="get" aria-describedby="quote-guidance" target="_blank" rel="noopener noreferrer">
   <input type="hidden" name="text" id="quote-message" value={t('Hello Yūgana Bari-kun! I would like a quote. My preferred tour, date, guests and pickup area are:','Yūgana Bari-kun様、旅行日、人数、ホテルエリアとご希望のツアーについて相談したいです。')} />
-  <div class="form-intro"><h3>{t('A few details, a better plan.','旅のご希望をお聞かせください。')}</h3><p>{t('Add what you know. You can discuss the rest in WhatsApp.','決まっていることだけで大丈夫です。詳細はWhatsAppでご相談いただけます。')}</p></div>
+  <div class="form-intro"><h3>{t('Plan your Bali trip','旅のご希望をお聞かせください。')}</h3><p>{t('Add what you know. You can discuss the rest in WhatsApp.','決まっていることだけで大丈夫です。詳細はWhatsAppでご相談いただけます。')}</p></div>
   <div class="form-grid">
     <div class="field"><label for="quote-tour">{t('Your tour idea','ご希望のツアー')}</label><select id="quote-tour"><option value="general">{t('Help me choose','相談して決めたい')}</option>{TOUR_IDS.map(id=><option value={id}>{TOUR_NAMES[lang][id]}</option>)}</select></div>
     <div class="field"><label for="quote-date">{t('Travel date (if known)','ご希望日（未定でも可）')}</label><input id="quote-date" type="date" /></div>
@@ -17,6 +17,6 @@ const t = (en:string,ja:string) => localize(lang,{en,ja});
     <div class="field full"><label for="quote-notes">{t('Anything else? (optional)','その他のご希望（任意）')}</label><textarea id="quote-notes" rows="3" maxlength="600"></textarea></div>
   </div>
   <button class="button button-wide" type="submit">{t('Continue to WhatsApp ↗','WhatsAppで相談する ↗')}</button>
-  <p class="form-note">{t('Opens WhatsApp with your details. Review and send your message there. Sending an inquiry does not confirm a booking.','入力内容を含むWhatsAppの画面が開きます。内容をご確認のうえ送信してください。お問い合わせだけでは予約確定になりません。')}</p>
+  <p class="form-note" id="quote-guidance">{t('Opens WhatsApp with your details. Review and send your message there. Sending an inquiry does not confirm a booking.','入力内容を含むWhatsAppの画面が開きます。内容をご確認のうえ送信してください。お問い合わせだけでは予約確定になりません。')}</p>
   <noscript><p>{t('Please add your tour, travel date, guests, and pickup area to the message in WhatsApp.','WhatsAppのメッセージに、ご希望のツアー、旅行日、人数、送迎エリアをご記入ください。')}</p></noscript>
 </form>

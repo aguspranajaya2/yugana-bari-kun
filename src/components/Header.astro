@@ -9,7 +9,7 @@ const links = [ ['#tours',t('Our tours','ツアー')], ['#about',t('Our approach
 <a class="skip-link" href="#main-content">{t('Skip to content','本文へ移動')}</a>
 <header class="site-header"><div class="header-inner">
   <a class="brand" href={localizedPath(lang)} aria-label={`${BRAND} — ${t('Home','ホーム')}`}>
-    <span class="brand-name">{BRAND}</span><span class="brand-caption">BALI, AT YOUR OWN PACE</span>
+    <span class="brand-name">{BRAND}</span>
   </a>
   <nav id="primary-navigation" class="primary-navigation" aria-label={t('Main navigation','メインナビゲーション')}>
     {links.map(([hash,label],index) => <a href={`${localizedPath(lang)}${hash}`} class:list={{'nav-contact':index===3}}>{label}</a>)}

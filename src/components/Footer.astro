@@ -6,7 +6,7 @@ const { lang } = Astro.props;
 const t = (en:string,ja:string) => localize(lang,{en,ja});
 ---
 <footer class="site-footer"><div class="footer-inner">
-  <div><a class="brand footer-brand" href={localizedPath(lang)}><span class="brand-name">{BRAND}</span><span class="brand-caption">RELAX. EXPLORE. ENJOY BALI.</span></a>
+  <div><a class="brand footer-brand" href={localizedPath(lang)}><span class="brand-name">{BRAND}</span></a>
   <p class="footer-intro">{t('Thoughtful journeys. Island moments. Your kind of Bali.','自分らしいペースで、心に残るバリの旅。')}</p></div>
   <div class="footer-contact"><a href={`https://wa.me/${WHATSAPP_NUMBER}`} target="_blank" rel="noopener noreferrer">WhatsApp · +62 813 3857 5123 ↗</a>
   <a href={LINE_URL} target="_blank" rel="noopener noreferrer" data-line={LINE_ID}>LINE · {LINE_ID} ↗</a>

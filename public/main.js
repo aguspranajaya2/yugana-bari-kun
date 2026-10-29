@@ -138,6 +138,18 @@
     }, { threshold: 0 });
     observer.observe(contactTarget);
   }
+  // Enhance visible content only. Nothing is hidden while waiting for JavaScript or an observer.
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const reveal = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-entering');
+        entry.target.addEventListener('animationend', () => entry.target.classList.remove('is-entering'), { once: true });
+        reveal.unobserve(entry.target);
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.section-top h2, .section-intro, .tour-card, .planning-inner h2, .planning-steps li, .about-copy h2, .about-copy > p, .about-image .photo-frame, .prep-grid a, .faq-heading h2, .contact-copy h2, .quote-form').forEach(element => reveal.observe(element));
+  }
   // Only hide the no-script mobile navigation once handlers have been installed.
   root.classList.add('js');
 })();

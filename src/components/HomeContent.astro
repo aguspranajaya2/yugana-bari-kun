@@ -13,10 +13,9 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
 ---
 <section class="home-hero page-shell">
   <div class="hero-copy">
-    <p class="eyebrow">{copy.aLittleCloserToBali}</p>
     <h1>
       <span>{copy.baliAtYour}</span>
-      <em>{copy.ownPace}</em>
+      <span>{copy.ownPace}</span>
     </h1>
     <p class="hero-description">{copy.fromQuietRiceTerracesToOceanSunsetsFindYour}</p>
     <div class="hero-actions">
@@ -24,9 +23,6 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
       <a href="#how-it-works" class="text-link">{copy.howToPlanYourTrip}</a>
     </div>
     <div class="hero-footnote">
-      <span class="small-sun" aria-hidden="true">
-        ✳
-      </span>
       <span>{copy.englishJapaneseWebsiteIndividualQuotes}</span>
     </div>
   </div>
@@ -36,19 +32,14 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
       <span class="location-dot" aria-hidden="true">
       </span>
       <div>
-        <span class="image-note-eyebrow">{copy.slowMomentsLastingMemories}</span>
         <p>{copy.somewhereYouLlWantToStayALittleLonger}</p>
       </div>
     </div>
-    <span class="hero-vertical" aria-hidden="true">
-      NATURE · CULTURE · ISLAND LIFE
-    </span>
   </div>
 </section>
 <section id="tours" class="section page-shell">
   <div class="section-top">
     <div>
-      <p class="eyebrow">{copy.findYourIslandMoment}</p>
       <h2>{copy.threePlacesEndlessPossibilities}</h2>
     </div>
     <p class="section-intro">{copy.startWithAPlaceYouLoveEachRouteIs}</p>
@@ -58,33 +49,23 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
 <section id="how-it-works" class="planning-section">
   <div class="page-shell planning-inner">
     <div>
-      <p class="eyebrow">{copy.aGoodTripStartsWithAConversation}</p>
       <h2>{copy.fromAnIdeaToYourItinerary}</h2>
       <p>{copy.aClearPlanBeforeYouBookWithRoomFor}</p>
     </div>
     <ol class="planning-steps">
       <li>
-        <span>
-          01
-        </span>
         <div>
           <h3>{copy.tellUsYourIdea}</h3>
           <p>{copy.shareYourDatesGuestsHotelAreaAndThePlaces}</p>
         </div>
       </li>
       <li>
-        <span>
-          02
-        </span>
         <div>
           <h3>{copy.discussYourQuote}</h3>
           <p>{copy.checkTheRouteTotalPriceTransportGuideLanguageAnd}</p>
         </div>
       </li>
       <li>
-        <span>
-          03
-        </span>
         <div>
           <h3>{copy.confirmTheDetails}</h3>
           <p>{copy.agreeOnTheArrangementsAndBookingConditionsThenReceive}</p>
@@ -96,10 +77,8 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
 <section id="about" class="section page-shell about-section">
   <div class="about-image">
     <Photo src="/images/about-bali.jpg" alt={lang === 'ja' ? '棚田、寺院、海岸が広がるバリ島のイメージ風景' : 'Illustrative Bali landscape with rice fields, temples and the coast'} width="1408" height="768" loading="lazy" decoding="async" />
-    <span class="image-caption">{copy.theIslandIsOnlyTheBeginning}</span>
   </div>
   <div class="about-copy">
-    <p class="eyebrow">{copy.theYGanaBariKunApproach}</p>
     <h2>{copy.aTripShouldFeelLikeYours}</h2>
     <p>{copy.aLittleNatureALittleCultureOrTimeBy}</p>
     <p>{copy.ourWebsiteIsAvailableInEnglishAndJapaneseTell}</p>
@@ -110,30 +89,20 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
   <div class="page-shell">
     <div class="section-top">
       <div>
-        <p class="eyebrow">{copy.beforeYouArrive}</p>
         <h2>{copy.aLittlePreparationASmootherArrival}</h2>
       </div>
       <p class="section-intro">{copy.checkTheLatestRequirementsDirectlyWithOfficialSourcesBefore}</p>
     </div>
     <div class="prep-grid">
       <a href="https://evisa.imigrasi.go.id/" target="_blank" rel="noopener noreferrer">
-        <span class="prep-number">
-          01 / ENTRY
-        </span>
         <h3>{copy.entryVisaInformation}</h3>
         <p>{copy.officialIndonesianImmigrationPortalCheckTheRequirementsForYour}</p>
       </a>
       <a href="https://lovebali.baliprov.go.id/" target="_blank" rel="noopener noreferrer">
-        <span class="prep-number">
-          02 / LOVE BALI
-        </span>
         <h3>{copy.baliTouristLevy}</h3>
         <p>{copy.visitTheOfficialBaliGovernmentSiteForTheCurrent}</p>
       </a>
       <a href="https://www.denpasar.id.emb-japan.go.jp/" target="_blank" rel="noopener noreferrer">
-        <span class="prep-number">
-          03 / TRAVEL INFORMATION
-        </span>
         <h3>{copy.informationForJapaneseVisitors}</h3>
         <p>{copy.travelNoticesAndLocalInformationFromTheConsulateGeneral}</p>
       </a>
@@ -142,7 +111,6 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
 </section>
 <section id="faq" class="section page-shell faq-section">
   <div class="faq-heading">
-    <p class="eyebrow">{copy.goodToKnow}</p>
     <h2>{copy.aFewThingsYouMightBeWondering}</h2>
     <p>{copy.clearDetailsMakeItEasierToPlanIfSomething}</p>
   </div>
@@ -206,7 +174,6 @@ const tours = (await getCollection('tours')).sort((a,b) => a.data.order - b.data
 <section id="contact" class="contact-section">
   <div class="page-shell contact-inner">
     <div class="contact-copy">
-      <p class="eyebrow">{copy.yourNextChapter}</p>
       <h2>{copy.letSMakeRoomForALittleBali}</h2>
       <p>{copy.tellUsWhatYourIdealTripLooksLikeWe}</p>
       <ContactChannels lang={lang} />

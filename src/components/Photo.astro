@@ -1,13 +1,15 @@
 ---
 import type { HTMLAttributes } from 'astro/types';
+import { PHOTOS } from '../data/images';
 
 interface Props extends Omit<HTMLAttributes<'img'>, 'src' | 'alt'> {
   src: string;
   alt: string;
 }
 
-const { src, alt, ...attributes } = Astro.props;
+const { src, alt, width, height, decoding = 'async', sizes = '(max-width: 700px) calc(100vw - 40px), (max-width: 900px) 46vw, 600px', ...attributes } = Astro.props;
+const photo = Object.hasOwn(PHOTOS, src) ? PHOTOS[src as keyof typeof PHOTOS] : undefined;
 ---
 <div class="photo-frame">
-  <img {...attributes} src={src} alt={alt} />
+  <img {...attributes} src={photo?.src || src} srcset={photo?.srcset} sizes={photo ? sizes : undefined} width={photo?.width || width} height={photo?.height || height} decoding={decoding} alt={alt} />
 </div>

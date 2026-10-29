@@ -3,16 +3,14 @@ import Photo from './Photo.astro';
 import type { CollectionEntry } from 'astro:content';
 import { localize, tourPath, type Locale } from '../i18n/index';
 interface Props { tour:CollectionEntry<'tours'>; index:number; lang:Locale }
-const { tour:{data:tour}, index, lang } = Astro.props;
+const { tour:{data:tour}, lang } = Astro.props;
 const name = lang==='ja' ? tour.name_ja : tour.name;
 ---
 <article class="tour-card">
   <a class="tour-image-link" href={tourPath(lang,tour.slug)} aria-label={localize(lang,{en:`Explore ${name}`,ja:`${name}のツアーを見る`})}>
-    <Photo src={`/images/${tour.slug}.jpg`} alt={localize(lang,{en:`${name} travel inspiration`,ja:`${name}の旅のイメージ`})} loading="lazy" decoding="async" />
-    <span class="image-number">{String(index).padStart(2,'0')}</span>
+    <Photo src={`/images/${tour.slug}.jpg`} alt={localize(lang,{en:`${name} travel inspiration`,ja:`${name}の旅のイメージ`})} loading="lazy" decoding="async" sizes="(max-width: 700px) calc(100vw - 40px), (max-width: 900px) 30vw, 400px" />
   </a>
   <div class="tour-card-content">
-    <p class="eyebrow">{lang==='ja'?tour.category_ja:tour.category}</p>
     <h3><a href={tourPath(lang,tour.slug)}>{name}</a></h3>
     <p class="tour-summary">{lang==='ja'?tour.intro_ja:tour.intro}</p>
     <div class="tour-card-bottom"><span class="quote-label">{localize(lang,{en:'Price on request',ja:'料金はお問い合わせください'})}</span><a class="text-link" href={tourPath(lang,tour.slug)}>{localize(lang,{en:'Discover ↗',ja:'詳しく見る ↗'})}</a></div>
